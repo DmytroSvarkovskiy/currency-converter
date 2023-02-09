@@ -10,7 +10,7 @@ type rateState = {
 };
 const initialState: rateState = {
   rate: {},
-  currentRate: 'UAH',
+  currentRate: 'USD',
   loading: false,
   error: null,
 };

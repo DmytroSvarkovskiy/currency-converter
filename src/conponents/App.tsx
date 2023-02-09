@@ -16,16 +16,16 @@ const GlobalStyle = createGlobalStyle`
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
-  const { currentRate } = useAppSelector(state => state.exchangeRate);
+  const { currentRate, rate } = useAppSelector(state => state.exchangeRate);
 
-  console.log(currentRate);
+  console.log(rate);
 
   useEffect(() => {
     dispatch(fetchCours(currentRate));
   }, [currentRate, dispatch]);
   return (
     <>
-      <div>testing</div>
+      <div></div>
       <GlobalStyle />
     </>
   );
