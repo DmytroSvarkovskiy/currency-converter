@@ -1,19 +1,25 @@
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios from 'axios';
+import { Response, ResError } from '../types/types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { AxiosError } from 'axios';
 
 axios.defaults.baseURL = 'https://api.apilayer.com/fixer';
 axios.defaults.headers['apikey'] = 'AuipmJdZi6CTtOaDYfevRz9Pks46LaCc';
 
-export const fetchCours = createAsyncThunk(
+export const fetchCours = createAsyncThunk<Response, string, { rejectValue: ResError }>(
   'contacts/fetchCours',
-  async (curency: string, { rejectWithValue }) => {
+  async (curency, { rejectWithValue }) => {
     try {
-      const response: AxiosResponse = await axios.get(
+      const { data } = await axios.get(
         `latest?base=${curency}&symbols=EUR,GBP&symbols=EUR,GBP,UAH,PLN,AUD,AZN,KZT,CAD,TRY,CHF,CZK`
       );
-      return response.data;
-    } catch (error: AxiosError) {
-      return rejectWithValue(error.message);
+      return data.rates;
+    } catch (err) {
+      const error = err as AxiosError<ResError>;
+      if (!error.response) {
+        throw err;
+      }
+      return rejectWithValue(error.response.data);
     }
   }
 );

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { FC } from 'react';
 import { useEffect } from 'react';
 import { fetchCours } from '../Redux/operations';
 
@@ -12,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App() {
+const App: FC = () => {
   useEffect(() => {
     fetchCours('USD');
   });
@@ -22,6 +23,6 @@ function App() {
       <GlobalStyle />
     </>
   );
-}
+};
 
 export default App;
