@@ -18,8 +18,8 @@ export type Response = {
   date: Date;
   rates: Rates;
 };
-export type ResError = {
+export interface ResError {
   message: string;
   description: string;
   code: number | undefined;
-};
+}
