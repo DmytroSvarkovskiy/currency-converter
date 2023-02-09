@@ -8,12 +8,11 @@ import { Home } from './pages/Home/Home';
 
 const GlobalStyle = createGlobalStyle`
   ul,h1,h2,h3,h4,h5,h6,li,p{list-style:none;margin:0;padding:0;};
-  body{
-   display: flex;
-   justify-content:center;
-   align-items:center;
+  body{background: linear-gradient(90deg,#faf0cd, #f7d7ca);
    color: '#010101'; 
   }
+a{text-decoration:none;
+color:inherit}
 `;
 const Converter = lazy(() => import('./pages/Converter/Converter'));
 
@@ -24,8 +23,7 @@ const App: React.FC = () => {
   useEffect(() => {
     dispatch(fetchCours(currentRate));
   }, [currentRate, dispatch]);
-  // const key = Object.keys(rate);
-  // const course = Object.values(rate);
+
   return (
     <>
       <Routes>
