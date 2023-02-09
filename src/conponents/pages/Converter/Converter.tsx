@@ -1,5 +1,9 @@
 import { Container } from '../../Container/Container';
 const Converter: React.FC = () => {
-  return <Container>Converter</Container>;
+  return (
+    <section>
+      <Container>Converter</Container>
+    </section>
+  );
 };
 export default Converter;
