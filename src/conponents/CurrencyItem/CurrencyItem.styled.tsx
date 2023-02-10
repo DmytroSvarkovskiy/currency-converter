@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export const CurrencyLi = styled.li`
-  min-width: 220px;
+  min-width: 245px;
   padding: 2px 3px;
   display: flex;
   align-items: center;
