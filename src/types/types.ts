@@ -11,10 +11,14 @@ export type Rates = {
   // TRY: number;
   // CHF: number;
   // USD: number;
+  // CZK:string;
 };
 export type Response = {
+  motd: {
+    msg: string;
+    url: string;
+  };
   success: boolean;
-  timestamp: number;
   base: string;
   date: Date;
   rates: Rates;

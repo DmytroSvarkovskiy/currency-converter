@@ -2,17 +2,15 @@ import axios from 'axios';
 import { ResError, Rates, Response } from '../types/types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
+import { currencyList } from './currencyList';
 
-axios.defaults.baseURL = 'https://api.apilayer.com/fixer';
-axios.defaults.headers['apikey'] = 'AuipmJdZi6CTtOaDYfevRz9Pks46LaCc';
+axios.defaults.baseURL = 'https://api.exchangerate.host/&latest?';
 
 export const fetchCours = createAsyncThunk<Rates, string, { rejectValue: string }>(
   'exchangeRate/fetchCours',
   async (curency, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get<Response>(
-        `latest?base=${curency}&symbols=EUR,GBP,UAH,PLN,AUD,AZN,KZT,CAD,TRY,CHF,USD`
-      );
+      const { data } = await axios.get<Response>(`base=${curency}&symbols=${currencyList.join()}`);
       return data.rates;
     } catch (err) {
       const error = err as AxiosError<ResError>;
