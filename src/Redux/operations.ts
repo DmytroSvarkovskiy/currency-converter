@@ -10,19 +10,7 @@ export const fetchCours = createAsyncThunk<Rates, string, { rejectValue: string 
   async (curency, { rejectWithValue }) => {
     try {
       const { data } = await axios.get<Response>(
-        `&latest?base=${curency}&symbols=AUD,
-AZN,
-CAD,
-CHF,
-CZK,
-EUR,
-GBP,
-KZT,
-KZT,
-PLN,
-TRY,
-UAH,
-USD`
+        `&latest?base=${curency}&symbols=AUD,AZN,CAD,CHF,CZK,EUR,GBP,KZT,KZT,PLN,TRY,UAH,USD`
       );
       return data.rates;
     } catch (err) {

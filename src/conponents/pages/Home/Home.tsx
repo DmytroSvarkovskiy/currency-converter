@@ -1,5 +1,5 @@
 import { Container } from '../../Container/Container';
-import { Casket, Title, ImgFlag, CurrencyList } from '../Home/Home.styled';
+import { Casket, Title, ImgFlag, CurrencyList, CurrencyItem } from '../Home/Home.styled';
 import { currencyListWithFlag } from '../../../currencyList';
 import { changeCurrentRate } from '../../../Redux/converter-slise';
 
@@ -33,10 +33,10 @@ export const Home: React.FC = () => {
           <CurrencyList>
             {currency.map((item, i) => {
               return (
-                <li key={i}>
+                <CurrencyItem key={i}>
                   <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
                   {item}:{course[i]}
-                </li>
+                </CurrencyItem>
               );
             })}
           </CurrencyList>

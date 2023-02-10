@@ -13,7 +13,6 @@ export const currencyListWithFlag: { [x: string]: string }[] = [
   },
   { GBP: 'https://flagsystem.ua/tmp/trumb/69b7e6d3e3c479b30841b20d92da1e58.jpg' },
   { KZT: 'https://flagsystem.ua/tmp/trumb/1903db49720e8e4e4dad667f0f264021.png' },
-  { KZT: 'https://flagsystem.ua/tmp/trumb/1903db49720e8e4e4dad667f0f264021.png' },
   { PLN: 'https://flagsystem.ua/tmp/trumb/f1b9680cf80c270bb9bd4dba3c35cb4f.png' },
   {
     TRY: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/120px-Flag_of_Turkey.svg.png',

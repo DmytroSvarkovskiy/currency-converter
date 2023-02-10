@@ -16,10 +16,13 @@ export const Title = styled.h1`
 export const ImgFlag = styled.img`
   width: 20px;
   height: 15px;
+  margin-right: 10px;
 `;
 export const CurrencyList = styled.ul`
   display: flex;
-  margin: 20px auto;
+  margin: 40px auto 0;
+  font-weight: 500;
+  font-size: 20px;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 30px;
@@ -27,4 +30,7 @@ export const CurrencyList = styled.ul`
   height: 300px;
   justify-content: center;
   align-items: center;
+`;
+export const CurrencyItem = styled.li`
+  width: 250px;
 `;
