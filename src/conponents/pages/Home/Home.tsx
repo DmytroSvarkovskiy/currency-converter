@@ -1,5 +1,6 @@
 import { Container } from '../../Container/Container';
 import { Casket, Title } from '../Home/Home.styled';
+import { currencyListWithFlag } from '../../../currencyList';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 
@@ -18,6 +19,7 @@ export const Home: React.FC = () => {
       <Container>
         <Casket>
           <Title>Current exchange rate</Title>
+          <img src={currencyListWithFlag[1].GBP} alt="flag" />
           <select name="currency" onChange={handleChange}>
             {currency.map(el => {
               return (
