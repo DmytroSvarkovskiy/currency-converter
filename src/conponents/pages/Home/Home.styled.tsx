@@ -20,7 +20,7 @@ export const ImgFlag = styled.img`
 `;
 export const CurrencyList = styled.ul`
   display: flex;
-  margin: 40px auto 0;
+  margin: 30px auto 0;
   font-weight: 500;
   font-size: 20px;
   flex-wrap: wrap;
@@ -30,9 +30,19 @@ export const CurrencyList = styled.ul`
   height: 420px;
   justify-content: center;
   align-items: center;
+  color: #756059;
 `;
 export const CurrencyItem = styled.li`
   min-width: 210px;
   display: flex;
   align-items: center;
+`;
+export const BaseCurrencyWrap = styled.div`
+  display: flex;
+  color: #756059;
+  flex-direction: column;
+  width: 60px;
+  gap: 10px;
+  margin-left: 92%;
+  font-weight: 500;
 `;

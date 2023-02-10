@@ -6,13 +6,13 @@ type rateState = {
   rate: Rates;
   currentRate: string;
   loading: boolean;
-  error: string | null;
+  error: boolean;
 };
 const initialState: rateState = {
   rate: {},
   currentRate: 'UAH',
   loading: false,
-  error: null,
+  error: false,
 };
 const exchangeSlice = createSlice({
   name: 'exchangeRate',
@@ -26,17 +26,14 @@ const exchangeSlice = createSlice({
     builder
       .addCase(fetchCours.pending, (state, _) => {
         state.loading = true;
-        state.error = null;
       })
       .addCase(fetchCours.fulfilled, (state, action) => {
         state.loading = false;
         state.rate = action.payload;
       })
-      .addCase(fetchCours.rejected, (state, action) => {
+      .addCase(fetchCours.rejected, state => {
         state.loading = false;
-        if (typeof action.payload === 'string') {
-          state.error = action.payload;
-        }
+        state.error = true;
       });
   },
 });

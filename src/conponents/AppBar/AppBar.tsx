@@ -1,6 +1,9 @@
 import { Container } from '../Container/Container';
 import { Nav, Link, CurrencyIcon, ConvertIcon } from './AppBar.styled';
+import { useAppSelector } from '../../hooks';
 export const AppBar: React.FC = () => {
+  const { error } = useAppSelector(state => state.exchangeRate);
+
   return (
     <header>
       <Container>
@@ -10,11 +13,12 @@ export const AppBar: React.FC = () => {
             <CurrencyIcon />
             Exchange rate
           </Link>
-
-          <Link to="/converter">
-            <ConvertIcon />
-            Converter
-          </Link>
+          {!error && (
+            <Link to="/converter">
+              <ConvertIcon />
+              Converter
+            </Link>
+          )}
         </Nav>
       </Container>
     </header>

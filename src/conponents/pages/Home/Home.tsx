@@ -1,5 +1,12 @@
 import { Container } from '../../Container/Container';
-import { Casket, Title, ImgFlag, CurrencyList, CurrencyItem } from '../Home/Home.styled';
+import {
+  Casket,
+  Title,
+  ImgFlag,
+  CurrencyList,
+  CurrencyItem,
+  BaseCurrencyWrap,
+} from '../Home/Home.styled';
 import { currencyListWithFlag } from '../../../currencyList';
 import { changeCurrentRate } from '../../../Redux/converter-slise';
 
@@ -19,16 +26,23 @@ export const Home: React.FC = () => {
     <section>
       <Container>
         <Casket>
-          <Title>Current exchange rate</Title>
-          <select name="currency" onChange={handleChange} value={currentRate}>
-            {currency.map(el => {
-              return (
-                <option key={el} value={el}>
-                  {el}
-                </option>
-              );
-            })}
-          </select>
+          <Title>
+            {error ? 'Something went wrong, please reload the page' : 'Current exchange rate'}
+          </Title>
+          {!error && (
+            <BaseCurrencyWrap>
+              <p>Base currency</p>
+              <select name="currency" onChange={handleChange} value={currentRate}>
+                {currency.map(el => {
+                  return (
+                    <option key={el} value={el}>
+                      {el}
+                    </option>
+                  );
+                })}
+              </select>
+            </BaseCurrencyWrap>
+          )}
           <CurrencyList>
             {currency.map((item, i) => {
               return (
