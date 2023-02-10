@@ -1,17 +1,5 @@
 export type Rates = {
   [x: string]: number;
-  // EUR: number;
-  // GBP: number;
-  // UAH: number;
-  // PLN: number;
-  // AUD: number;
-  // AZN: number;
-  // KZT: number;
-  // CAD: number;
-  // TRY: number;
-  // CHF: number;
-  // USD: number;
-  // CZK:string;
 };
 export type Response = {
   motd: {

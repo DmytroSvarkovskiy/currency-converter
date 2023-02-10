@@ -5,7 +5,6 @@ export const Casket = styled.div`
   height: 600px;
   padding: 15px;
   position: relative;
-  /* border: 1px solid #e9b7a7; */
   border-radius: 1.5em;
   margin: 60px auto;
   box-shadow: rgba(158, 120, 97, 0.24) 0px 3px 8px;
