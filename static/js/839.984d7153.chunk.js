@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcurrency_converter=self.webpackChunkcurrency_converter||[]).push([[839],{839:function(e,r,n){n.r(r);var c=n(106),t=n(184);r.default=function(){return(0,t.jsx)("section",{children:(0,t.jsx)(c.W,{children:"Converter"})})}}}]);
-//# sourceMappingURL=839.984d7153.chunk.js.map
