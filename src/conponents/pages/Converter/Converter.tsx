@@ -10,17 +10,22 @@ const Converter: React.FC = () => {
   const currency = Object.keys(rate);
   // const course = Object.values(rate);
   const [forCurency, setForCurrency] = useState(currentRate);
-  const currentIndex = currency.findIndex(el => el === forCurency);
+  const [toCurency, setToCurrency] = useState(currentRate);
+  const currentIndexFor = currency.findIndex(el => el === forCurency);
+  const currentIndexTo = currency.findIndex(el => el === toCurency);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setForCurrency(e.target.value);
+  };
+  const handleToChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setToCurrency(e.target.value);
   };
   return (
     <section>
       <Container>
         <Casket>
           <ConvertTitle>Convert the required currency</ConvertTitle>
-          <img src={currencyListWithFlag[currentIndex][forCurency]} alt="flag" />{' '}
+          <img src={currencyListWithFlag[currentIndexFor][forCurency]} alt="flag" />{' '}
           <select onChange={handleChange} value={forCurency}>
             {currency.map(el => {
               return (
@@ -32,7 +37,7 @@ const Converter: React.FC = () => {
           </select>
           <input type="number" />
           <input type="number" />{' '}
-          {/* <select value={currentRate}>
+          <select onChange={handleToChange} value={toCurency}>
             {currency.map(el => {
               return (
                 <option key={el} value={el}>
@@ -40,7 +45,8 @@ const Converter: React.FC = () => {
                 </option>
               );
             })}
-          </select> */}
+          </select>
+          <img src={currencyListWithFlag[currentIndexTo][toCurency]} alt="flag" />{' '}
         </Casket>
       </Container>
     </section>
