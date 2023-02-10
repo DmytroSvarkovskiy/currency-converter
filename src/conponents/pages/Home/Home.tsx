@@ -24,7 +24,7 @@ export const Home: React.FC = () => {
           {!error && (
             <BaseCurrencyWrap>
               <p>Select base currency</p>
-              <Select name="currency" onChange={handleChange} value={currentRate}>
+              <Select onChange={handleChange} value={currentRate}>
                 {currency.map(el => {
                   return (
                     <option key={el} value={el}>
@@ -33,6 +33,7 @@ export const Home: React.FC = () => {
                   );
                 })}
               </Select>
+              <img src="" alt="" />
             </BaseCurrencyWrap>
           )}
           <CurrencyList>
