@@ -6,6 +6,7 @@ import {
   CurrencyList,
   CurrencyItem,
   BaseCurrencyWrap,
+  Select,
 } from '../Home/Home.styled';
 import { currencyListWithFlag } from '../../../currencyList';
 import { changeCurrentRate } from '../../../Redux/converter-slise';
@@ -31,8 +32,8 @@ export const Home: React.FC = () => {
           </Title>
           {!error && (
             <BaseCurrencyWrap>
-              <p>Base currency</p>
-              <select name="currency" onChange={handleChange} value={currentRate}>
+              <p>Select base currency</p>
+              <Select name="currency" onChange={handleChange} value={currentRate}>
                 {currency.map(el => {
                   return (
                     <option key={el} value={el}>
@@ -40,13 +41,13 @@ export const Home: React.FC = () => {
                     </option>
                   );
                 })}
-              </select>
+              </Select>
             </BaseCurrencyWrap>
           )}
           <CurrencyList>
             {currency.map((item, i) => {
               return (
-                <CurrencyItem key={i}>
+                <CurrencyItem key={i} id={item === currentRate ? 'active' : item}>
                   <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
                   {item}&nbsp;:&nbsp;{course[i]}
                 </CurrencyItem>
