@@ -18,15 +18,20 @@ const Converter: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setForCurrency(e.target.value);
+    setToState(((rate[toCurency] / rate[e.target.value]) * +forCount).toFixed(5).toString());
   };
   const handleToChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setToCurrency(e.target.value);
+    setToState(((rate[e.target.value] / rate[forCurency]) * +forCount).toFixed(5).toString());
   };
+
   const onForChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setForCount(e.target.value);
+    setToState(((rate[toCurency] / rate[forCurency]) * +e.target.value).toFixed(5).toString());
   };
   const onToChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setToState(e.target.value);
+    // setForCount(((rate[toCurency] / rate[forCurency]) * +e.target.value).toFixed(5).toString());
   };
 
   return (
