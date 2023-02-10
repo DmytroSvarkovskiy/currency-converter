@@ -1,16 +1,7 @@
 import { Container } from '../../Container/Container';
-import {
-  Casket,
-  Title,
-  ImgFlag,
-  CurrencyList,
-  CurrencyItem,
-  BaseCurrencyWrap,
-  Select,
-} from '../Home/Home.styled';
-import { currencyListWithFlag } from '../../../currencyList';
+import { CurrencyItem } from '../../CurrencyItem/CurrencyItem';
+import { Casket, Title, CurrencyList, BaseCurrencyWrap, Select } from '../Home/Home.styled';
 import { changeCurrentRate } from '../../../Redux/converter-slise';
-
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 
 export const Home: React.FC = () => {
@@ -47,10 +38,13 @@ export const Home: React.FC = () => {
           <CurrencyList>
             {currency.map((item, i) => {
               return (
-                <CurrencyItem key={i} id={item === currentRate ? 'active' : item}>
-                  <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
-                  {item}&nbsp;:&nbsp;{course[i]}
-                </CurrencyItem>
+                <CurrencyItem
+                  key={item}
+                  item={item}
+                  i={i}
+                  course={course}
+                  currentRate={currentRate}
+                />
               );
             })}
           </CurrencyList>

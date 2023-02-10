@@ -15,12 +15,7 @@ export const Title = styled.h1`
   font-size: 35px;
   color: #756059;
 `;
-export const ImgFlag = styled.img`
-  width: 50px;
-  height: 35px;
-  margin-right: 10px;
-  border-radius: 6px;
-`;
+
 export const CurrencyList = styled.ul`
   display: flex;
   margin: 30px auto 0;
@@ -35,25 +30,11 @@ export const CurrencyList = styled.ul`
   align-items: center;
   color: #756059;
 `;
-export const CurrencyItem = styled.li`
-  min-width: 220px;
-  padding: 2px 3px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: scale 0.4s;
-  &#active {
-    /* outline: 1px solid #756059; */
-    scale: 1.1;
-    border-radius: 5px;
-    box-shadow: rgba(104, 87, 76, 0.24) 0px 3px 8px;
-  }
-`;
+
 export const BaseCurrencyWrap = styled.div`
   display: flex;
   color: #756059;
   flex-direction: column;
-  /* width: 60px; */
   gap: 10px;
   font-weight: 500;
   position: absolute;
@@ -63,7 +44,7 @@ export const BaseCurrencyWrap = styled.div`
 export const Select = styled.select`
   border-radius: 5px;
   width: 60px;
-  /* border: none; */
+  cursor: pointer;
   color: #756059;
   background-color: #f1ebe9;
   border-color: #756059;
