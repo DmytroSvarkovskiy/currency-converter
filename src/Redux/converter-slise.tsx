@@ -10,7 +10,7 @@ type rateState = {
 };
 const initialState: rateState = {
   rate: {},
-  currentRate: 'USD',
+  currentRate: 'AUD',
   loading: false,
   error: null,
 };

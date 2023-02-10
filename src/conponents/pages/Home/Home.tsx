@@ -1,6 +1,7 @@
 import { Container } from '../../Container/Container';
-import { Casket, Title } from '../Home/Home.styled';
+import { Casket, Title, ImgFlag, CurrencyList } from '../Home/Home.styled';
 import { currencyListWithFlag } from '../../../currencyList';
+import { changeCurrentRate } from '../../../Redux/converter-slise';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 
@@ -10,8 +11,8 @@ export const Home: React.FC = () => {
   const currency = Object.keys(rate);
   const course = Object.values(rate);
 
-  const handleChange = (e: { target: any }) => {
-    console.dir(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    dispatch(changeCurrentRate(e.target.value));
   };
 
   return (
@@ -19,7 +20,7 @@ export const Home: React.FC = () => {
       <Container>
         <Casket>
           <Title>Current exchange rate</Title>
-          <img src={currencyListWithFlag[1].GBP} alt="flag" />
+
           <select name="currency" onChange={handleChange}>
             {currency.map(el => {
               return (
@@ -29,6 +30,16 @@ export const Home: React.FC = () => {
               );
             })}
           </select>
+          <CurrencyList>
+            {currency.map((item, i) => {
+              return (
+                <li key={i}>
+                  <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
+                  {item}:{course[i]}
+                </li>
+              );
+            })}
+          </CurrencyList>
         </Casket>
       </Container>
     </section>

@@ -13,3 +13,18 @@ export const Title = styled.h1`
   font-size: 35px;
   color: #756059;
 `;
+export const ImgFlag = styled.img`
+  width: 20px;
+  height: 15px;
+`;
+export const CurrencyList = styled.ul`
+  display: flex;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
+  width: 600px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+`;
