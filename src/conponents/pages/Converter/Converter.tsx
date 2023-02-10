@@ -11,6 +11,8 @@ const Converter: React.FC = () => {
   // const course = Object.values(rate);
   const [forCurency, setForCurrency] = useState(currentRate);
   const [toCurency, setToCurrency] = useState(currentRate);
+  const [forCount, setForCount] = useState('');
+  const [toState, setToState] = useState('');
   const currentIndexFor = currency.findIndex(el => el === forCurency);
   const currentIndexTo = currency.findIndex(el => el === toCurency);
 
@@ -20,12 +22,21 @@ const Converter: React.FC = () => {
   const handleToChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setToCurrency(e.target.value);
   };
+  const onForChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setForCount(e.target.value);
+  };
+  const onToChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setToState(e.target.value);
+  };
+
   return (
     <section>
       <Container>
         <Casket>
           <ConvertTitle>Convert the required currency</ConvertTitle>
-          <img src={currencyListWithFlag[currentIndexFor][forCurency]} alt="flag" />{' '}
+          {currentIndexFor !== -1 && (
+            <img src={currencyListWithFlag[currentIndexFor][forCurency]} alt="flag" />
+          )}
           <select onChange={handleChange} value={forCurency}>
             {currency.map(el => {
               return (
@@ -35,8 +46,8 @@ const Converter: React.FC = () => {
               );
             })}
           </select>
-          <input type="number" />
-          <input type="number" />{' '}
+          <input type="number" placeholder="0" value={forCount} onChange={onForChange} />
+          <input value={toState} type="number" onChange={onToChange} placeholder="0" />
           <select onChange={handleToChange} value={toCurency}>
             {currency.map(el => {
               return (
@@ -46,7 +57,9 @@ const Converter: React.FC = () => {
               );
             })}
           </select>
-          <img src={currencyListWithFlag[currentIndexTo][toCurency]} alt="flag" />{' '}
+          {currentIndexTo !== -1 && (
+            <img src={currencyListWithFlag[currentIndexTo][toCurency]} alt="flag" />
+          )}
         </Casket>
       </Container>
     </section>
