@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
               return (
                 <CurrencyItem key={i}>
                   <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
-                  {item}:{course[i]}
+                  {item}&nbsp;:&nbsp;{course[i]}
                 </CurrencyItem>
               );
             })}

@@ -17,6 +17,7 @@ export const ImgFlag = styled.img`
   width: 50px;
   height: 35px;
   margin-right: 10px;
+  border-radius: 6px;
 `;
 export const CurrencyList = styled.ul`
   display: flex;
