@@ -14,8 +14,8 @@ export const Title = styled.h1`
   color: #756059;
 `;
 export const ImgFlag = styled.img`
-  width: 40px;
-  height: 30px;
+  width: 50px;
+  height: 35px;
   margin-right: 10px;
 `;
 export const CurrencyList = styled.ul`
@@ -27,12 +27,12 @@ export const CurrencyList = styled.ul`
   flex-direction: column;
   gap: 40px;
   width: 600px;
-  height: 400px;
+  height: 420px;
   justify-content: center;
   align-items: center;
 `;
 export const CurrencyItem = styled.li`
-  width: 200px;
+  min-width: 210px;
   display: flex;
   align-items: center;
 `;

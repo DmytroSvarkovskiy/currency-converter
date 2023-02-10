@@ -20,8 +20,7 @@ export const Home: React.FC = () => {
       <Container>
         <Casket>
           <Title>Current exchange rate</Title>
-
-          <select name="currency" onChange={handleChange}>
+          <select name="currency" onChange={handleChange} value={currentRate}>
             {currency.map(el => {
               return (
                 <option key={el} value={el}>
