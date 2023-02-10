@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks';
 
 export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { currentRate, rate } = useAppSelector(state => state.exchangeRate);
+  const { currentRate, rate, error } = useAppSelector(state => state.exchangeRate);
   const currency = Object.keys(rate);
   const course = Object.values(rate);
 
