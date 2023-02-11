@@ -3,7 +3,7 @@ import { Casket } from '../Home/Home.styled';
 import { useAppSelector } from '../../../hooks';
 import { ConvertTitle } from './Converter.styled';
 import { useState } from 'react';
-// import { currencyListWithFlag } from '../../../currencyList';
+import { currencyListWithFlag } from '../../../currencyList';
 
 const Converter: React.FC = () => {
   const { rate, currentRate } = useAppSelector(state => state.exchangeRate);
@@ -13,8 +13,8 @@ const Converter: React.FC = () => {
   const [toCurency, setToCurrency] = useState(currentRate);
   const [forCount, setForCount] = useState('');
   const [toState, setToState] = useState('');
-  // const currentIndexFor = currency.findIndex(el => el === forCurency);
-  // const currentIndexTo = currency.findIndex(el => el === toCurency);
+  const currentIndexFor = currency.findIndex(el => el === forCurency);
+  const currentIndexTo = currency.findIndex(el => el === toCurency);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setForCurrency(e.target.value);
@@ -31,7 +31,7 @@ const Converter: React.FC = () => {
   };
   const onToChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setToState(e.target.value);
-    // setForCount(((rate[toCurency] / rate[forCurency]) * +e.target.value).toFixed(5).toString());
+    setForCount(((rate[toCurency] / rate[forCurency]) * +e.target.value).toFixed(5).toString());
   };
 
   return (
@@ -39,9 +39,9 @@ const Converter: React.FC = () => {
       <Container>
         <Casket>
           <ConvertTitle>Convert the required currency</ConvertTitle>
-          {/* {currentIndexFor !== -1 && (
+          {currentIndexFor !== -1 && (
             <img src={currencyListWithFlag[currentIndexFor][forCurency]} alt="flag" />
-          )} */}
+          )}
           <select onChange={handleChange} value={forCurency}>
             {currency.map(el => {
               return (
@@ -62,9 +62,9 @@ const Converter: React.FC = () => {
               );
             })}
           </select>
-          {/* {currentIndexTo !== -1 && (
+          {currentIndexTo !== -1 && (
             <img src={currencyListWithFlag[currentIndexTo][toCurency]} alt="flag" />
-          )} */}
+          )}
         </Casket>
       </Container>
     </section>
