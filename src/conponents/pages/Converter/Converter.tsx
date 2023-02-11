@@ -1,6 +1,7 @@
 import { Container } from '../../Container/Container';
 import { Casket } from '../Home/Home.styled';
 import { useAppSelector } from '../../../hooks';
+
 import {
   ConvertTitle,
   FlagConvert,
@@ -28,7 +29,6 @@ const Converter: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setFromCurrency(e.target.value);
-
     setToCount(
       parseFloat(((rate[toCurency] / rate[e.target.value]) * +fromCount).toFixed(4)).toString()
     );
@@ -52,7 +52,7 @@ const Converter: React.FC = () => {
       parseFloat(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(4)).toString()
     );
   };
-  const changePlaces = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const changePlaces = (): void => {
     setFromCurrency(toCurency);
     setToCurrency(fromCurency);
     setFromCount(toCount);

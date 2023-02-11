@@ -1,5 +1,7 @@
 import { currencyListWithFlag } from '../../currencyList';
 import { CurrencyLi, ImgFlag } from './CurrencyItem.styled';
+import { changeCurrentRate } from '../../Redux/converter-slise';
+import { useAppDispatch } from '../../hooks';
 
 type PropsItem = {
   i: number;
@@ -8,8 +10,13 @@ type PropsItem = {
   currentRate: string;
 };
 export const CurrencyItem: React.FC<PropsItem> = ({ i, item, course, currentRate }) => {
+  const dispatch = useAppDispatch();
+  const onClick = (): void => {
+    dispatch(changeCurrentRate(item));
+  };
+
   return (
-    <CurrencyLi key={i} id={item === currentRate ? 'active' : item}>
+    <CurrencyLi key={i} id={item === currentRate ? 'active' : item} onClick={onClick}>
       <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
       {item}&nbsp;:&nbsp;{course[i]}
     </CurrencyLi>

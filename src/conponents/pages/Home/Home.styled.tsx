@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Casket = styled.div`
   width: 950px;
   min-height: 600px;
-  padding: 15px;
+  padding: 25px;
   position: relative;
   border-radius: 1.5em;
   margin: 60px auto;
