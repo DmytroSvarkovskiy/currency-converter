@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Casket = styled.div`
   width: 950px;
-  height: 600px;
+  min-height: 600px;
   padding: 15px;
   position: relative;
   border-radius: 1.5em;
@@ -16,15 +16,15 @@ export const Title = styled.h1`
 `;
 
 export const CurrencyList = styled.ul`
-  display: flex;
+  display: grid;
+  /* grid-template-rows: repeat(6); */
+  grid-template-columns: 245px 245px;
   margin: 30px auto 0;
   font-weight: 500;
   font-size: 20px;
-  flex-wrap: wrap;
-  flex-direction: column;
   gap: 40px;
   width: 600px;
-  height: 460px;
+  min-height: 550px;
   justify-content: center;
   align-items: center;
   color: #756059;

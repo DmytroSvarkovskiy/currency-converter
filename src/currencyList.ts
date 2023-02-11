@@ -6,12 +6,18 @@ export const currencyListWithFlag: { [x: string]: string }[] = [
     CHF: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/120px-Flag_of_Switzerland.svg.png',
   },
   {
+    CNY: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/250px-Flag_of_the_People%27s_Republic_of_China.svg.png',
+  },
+  {
     CZK: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/120px-Flag_of_the_Czech_Republic.svg.png',
   },
   {
     EUR: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/250px-Flag_of_Europe.svg.png',
   },
   { GBP: 'https://flagsystem.ua/tmp/trumb/69b7e6d3e3c479b30841b20d92da1e58.jpg' },
+  {
+    GEL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/250px-Flag_of_Georgia.svg.png',
+  },
   { KZT: 'https://flagsystem.ua/tmp/trumb/1903db49720e8e4e4dad667f0f264021.png' },
   { PLN: 'https://flagsystem.ua/tmp/trumb/f1b9680cf80c270bb9bd4dba3c35cb4f.png' },
   {

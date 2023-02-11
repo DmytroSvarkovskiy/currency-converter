@@ -49,6 +49,7 @@ export const InputConvert = styled.input`
   color: #756059;
   height: 120px;
   height: 80px;
+  background-color: #eeecec;
 `;
 export const ConvertIcon = styled(RiExchangeDollarLine)`
   height: 50px;
