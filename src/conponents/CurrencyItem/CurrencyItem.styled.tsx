@@ -17,4 +17,5 @@ export const ImgFlag = styled.img`
   height: 35px;
   margin-right: 10px;
   border-radius: 6px;
+  border: 1px solid #756059;
 `;

@@ -19,30 +19,38 @@ import { currencyListWithFlag } from '../../../currencyList';
 const Converter: React.FC = () => {
   const { rate, currentRate } = useAppSelector(state => state.exchangeRate);
   const currency = Object.keys(rate);
-  // const course = Object.values(rate);
   const [fromCurency, setFromCurrency] = useState(currentRate);
   const [toCurency, setToCurrency] = useState(currentRate);
-  const [fromCount, setFromCount] = useState('');
-  const [toCount, setToCount] = useState('');
+  const [fromCount, setFromCount] = useState('1');
+  const [toCount, setToCount] = useState('1');
   const currentIndexFor = currency.findIndex(el => el === fromCurency);
   const currentIndexTo = currency.findIndex(el => el === toCurency);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setFromCurrency(e.target.value);
-    setToCount(((rate[toCurency] / rate[e.target.value]) * +fromCount).toFixed(4).toString());
+
+    setToCount(
+      parseFloat(((rate[toCurency] / rate[e.target.value]) * +fromCount).toFixed(4)).toString()
+    );
   };
   const handleToChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setToCurrency(e.target.value);
-    setToCount(((rate[e.target.value] / rate[fromCurency]) * +fromCount).toFixed(4).toString());
+    setToCount(
+      parseFloat(((rate[e.target.value] / rate[fromCurency]) * +fromCount).toFixed(4)).toString()
+    );
   };
 
   const onForChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFromCount(e.target.value);
-    setToCount(((rate[toCurency] / rate[fromCurency]) * +e.target.value).toFixed(4).toString());
+    setToCount(
+      parseFloat(((rate[toCurency] / rate[fromCurency]) * +e.target.value).toFixed(4)).toString()
+    );
   };
   const onToChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setToCount(e.target.value);
-    setFromCount(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(4).toString());
+    setFromCount(
+      parseFloat(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(4)).toString()
+    );
   };
   const changePlaces = (e: React.MouseEvent<HTMLButtonElement>): void => {
     setFromCurrency(toCurency);
