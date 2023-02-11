@@ -3,7 +3,7 @@ import { Casket } from '../Home/Home.styled';
 import { useAppSelector } from '../../../hooks';
 import { ConvertTitle } from './Converter.styled';
 import { useState } from 'react';
-import { currencyListWithFlag } from '../../../currencyList';
+// import { currencyListWithFlag } from '../../../currencyList';
 
 const Converter: React.FC = () => {
   const { rate, currentRate } = useAppSelector(state => state.exchangeRate);
