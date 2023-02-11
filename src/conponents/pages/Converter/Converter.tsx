@@ -9,8 +9,11 @@ import {
   SelectConvert,
   InputConvert,
   ConvertIcon,
+  TextConvert,
+  ArrowConvert,
+  ButtonConvert,
 } from './Converter.styled';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { currencyListWithFlag } from '../../../currencyList';
 
 const Converter: React.FC = () => {
@@ -41,6 +44,12 @@ const Converter: React.FC = () => {
     setToCount(e.target.value);
     setFromCount(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(5).toString());
   };
+  const changePlaces = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    setFromCurrency(toCurency);
+    setToCurrency(fromCurency);
+    setFromCount(toCount);
+    setToCount(fromCount);
+  };
 
   return (
     <section>
@@ -49,7 +58,8 @@ const Converter: React.FC = () => {
           <ConvertTitle>Convert the required currency</ConvertTitle>
           <WrapMainContent>
             <WrapSelect>
-              <p>From</p>
+              <TextConvert>From</TextConvert>
+              <ArrowConvert />
               {currentIndexFor !== -1 && (
                 <FlagConvert src={currencyListWithFlag[currentIndexFor][fromCurency]} alt="flag" />
               )}
@@ -70,9 +80,13 @@ const Converter: React.FC = () => {
                 })}
               </SelectConvert>
             </WrapSelect>
-            <ConvertIcon />
+            <ButtonConvert onClick={changePlaces}>
+              <ConvertIcon />
+            </ButtonConvert>
+
             <WrapSelect>
-              <p>To</p>
+              <TextConvert>To</TextConvert>
+              <ArrowConvert />
               {currentIndexTo !== -1 && (
                 <FlagConvert src={currencyListWithFlag[currentIndexTo][toCurency]} alt="flag" />
               )}

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { RiExchangeDollarLine } from 'react-icons/ri';
+import { RiExchangeDollarLine, RiArrowRightLine } from 'react-icons/ri';
 
 export const ConvertTitle = styled.h2`
   text-align: center;
   font-size: 35px;
   color: #756059;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 `;
 export const FlagConvert = styled.img`
   width: 160px;
@@ -23,6 +23,7 @@ export const WrapMainContent = styled.div`
 `;
 export const WrapSelect = styled.div`
   display: flex;
+  align-items: center;
 `;
 export const SelectConvert = styled.select`
   border-top-right-radius: 7px;
@@ -31,7 +32,7 @@ export const SelectConvert = styled.select`
   display: flex;
   outline: none;
   background-color: #e6e6e6;
-  font-size: 25px;
+  font-size: 22px;
   color: #756059;
   font-weight: 600;
 `;
@@ -49,4 +50,20 @@ export const ConvertIcon = styled(RiExchangeDollarLine)`
   height: 50px;
   width: 50px;
   color: #c4907e;
+`;
+export const TextConvert = styled.p`
+  width: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #756059;
+`;
+export const ArrowConvert = styled(RiArrowRightLine)`
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  color: #756059;
+`;
+export const ButtonConvert = styled.button`
+  background-color: transparent;
+  border: none;
 `;
