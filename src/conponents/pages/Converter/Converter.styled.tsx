@@ -8,11 +8,12 @@ export const ConvertTitle = styled.h2`
   margin-bottom: 100px;
 `;
 export const FlagConvert = styled.img`
-  width: 160px;
+  width: 140px;
   height: 80px;
   border-radius: 7px;
   overflow: hidden;
   margin-right: 10px;
+  border: 1px solid #756059;
 `;
 export const WrapMainContent = styled.div`
   display: flex;
@@ -41,7 +42,7 @@ export const InputConvert = styled.input`
   border-bottom-left-radius: 7px;
   border: none;
   padding: 5px 10px;
-  font-size: 38px;
+  font-size: 45px;
   width: 350px;
   font-weight: 600;
   color: #756059;
