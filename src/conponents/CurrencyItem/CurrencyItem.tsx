@@ -1,5 +1,5 @@
 import { currencyListWithFlag } from '../../currencyList';
-import { CurrencyLi, ImgFlag } from './CurrencyItem.styled';
+import { CurrencyLi, ImgFlag, DivTitle } from './CurrencyItem.styled';
 import { changeCurrentRate } from '../../Redux/converter-slise';
 import { useAppDispatch } from '../../hooks';
 
@@ -17,8 +17,11 @@ export const CurrencyItem: React.FC<PropsItem> = ({ i, item, course, currentRate
 
   return (
     <CurrencyLi key={i} id={item === currentRate ? 'active' : item} onClick={onClick}>
-      <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" />
-      {item}&nbsp;:&nbsp;{course[i]}
+      <DivTitle>
+        {' '}
+        <ImgFlag src={currencyListWithFlag[i][item]} alt="flag" /> {item}&nbsp;:&nbsp;{course[i]}
+      </DivTitle>
+      <p>{currencyListWithFlag[i].title}</p>
     </CurrencyLi>
   );
 };

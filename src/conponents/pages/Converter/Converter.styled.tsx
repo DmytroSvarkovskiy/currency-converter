@@ -72,7 +72,7 @@ export const ArrowConvert = styled(RiArrowRightLine)`
 `;
 export const ButtonConvert = styled.button`
   background-color: transparent;
-  padding-left: 180px;
+  margin-left: 180px;
   border: none;
   cursor: pointer;
   &:hover {
@@ -80,4 +80,10 @@ export const ButtonConvert = styled.button`
       color: #e79537;
     }
   }
+`;
+export const CurrencyName = styled.p`
+  font-size: 25px;
+  color: #756059;
+  font-weight: 600;
+  margin-left: 20%;
 `;

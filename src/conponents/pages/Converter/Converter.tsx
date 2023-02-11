@@ -1,7 +1,6 @@
 import { Container } from '../../Container/Container';
 import { Casket } from '../Home/Home.styled';
 import { useAppSelector } from '../../../hooks';
-
 import {
   ConvertTitle,
   FlagConvert,
@@ -13,6 +12,7 @@ import {
   TextConvert,
   ArrowConvert,
   ButtonConvert,
+  CurrencyName,
 } from './Converter.styled';
 import React, { useState } from 'react';
 import { currencyListWithFlag } from '../../../currencyList';
@@ -65,6 +65,9 @@ const Converter: React.FC = () => {
         <Casket>
           <ConvertTitle>Convert the required currency</ConvertTitle>
           <WrapMainContent>
+            {currentIndexFor !== -1 && (
+              <CurrencyName>{currencyListWithFlag[currentIndexFor].title}</CurrencyName>
+            )}
             <WrapSelect>
               <TextConvert>From</TextConvert>
               <ArrowConvert />
@@ -91,13 +94,12 @@ const Converter: React.FC = () => {
             <ButtonConvert onClick={changePlaces}>
               <ConvertIcon />
             </ButtonConvert>
-
             <WrapSelect>
               <TextConvert>To</TextConvert>
               <ArrowConvert />
               {currentIndexTo !== -1 && (
                 <FlagConvert src={currencyListWithFlag[currentIndexTo][toCurency]} alt="flag" />
-              )}
+              )}{' '}
               <InputConvert value={toCount} type="number" onChange={onToChange} placeholder="0" />{' '}
               <SelectConvert onChange={handleToChange} value={toCurency}>
                 {currency.map(el => {
@@ -109,6 +111,9 @@ const Converter: React.FC = () => {
                 })}
               </SelectConvert>
             </WrapSelect>
+            {currentIndexTo !== -1 && (
+              <CurrencyName>{currencyListWithFlag[currentIndexTo].title}</CurrencyName>
+            )}{' '}
           </WrapMainContent>
         </Casket>
       </Container>
