@@ -17,9 +17,8 @@ export const Title = styled.h1`
 
 export const CurrencyList = styled.ul`
   display: grid;
-  /* grid-template-rows: repeat(6); */
   grid-template-columns: 245px 245px;
-  margin: 30px auto 0;
+  margin: 30px 180px 0px;
   font-weight: 500;
   font-size: 20px;
   gap: 40px;
