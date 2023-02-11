@@ -50,6 +50,7 @@ export const ConvertIcon = styled(RiExchangeDollarLine)`
   height: 50px;
   width: 50px;
   color: #c4907e;
+  transition: color 0.3s;
 `;
 export const TextConvert = styled.p`
   width: 60px;
@@ -66,4 +67,10 @@ export const ArrowConvert = styled(RiArrowRightLine)`
 export const ButtonConvert = styled.button`
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  &:hover {
+    svg {
+      color: #e79537;
+    }
+  }
 `;

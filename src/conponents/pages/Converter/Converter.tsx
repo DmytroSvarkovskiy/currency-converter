@@ -29,20 +29,20 @@ const Converter: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setFromCurrency(e.target.value);
-    setToCount(((rate[toCurency] / rate[e.target.value]) * +fromCount).toFixed(5).toString());
+    setToCount(((rate[toCurency] / rate[e.target.value]) * +fromCount).toFixed(4).toString());
   };
   const handleToChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setToCurrency(e.target.value);
-    setToCount(((rate[e.target.value] / rate[fromCurency]) * +fromCount).toFixed(5).toString());
+    setToCount(((rate[e.target.value] / rate[fromCurency]) * +fromCount).toFixed(4).toString());
   };
 
   const onForChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFromCount(e.target.value);
-    setToCount(((rate[toCurency] / rate[fromCurency]) * +e.target.value).toFixed(5).toString());
+    setToCount(((rate[toCurency] / rate[fromCurency]) * +e.target.value).toFixed(4).toString());
   };
   const onToChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setToCount(e.target.value);
-    setFromCount(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(5).toString());
+    setFromCount(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(4).toString());
   };
   const changePlaces = (e: React.MouseEvent<HTMLButtonElement>): void => {
     setFromCurrency(toCurency);
