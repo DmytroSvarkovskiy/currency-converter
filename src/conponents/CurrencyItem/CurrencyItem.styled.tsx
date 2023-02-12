@@ -18,6 +18,7 @@ export const CurrencyLi = styled.li`
     border-radius: 7px;
     box-shadow: rgba(104, 87, 76, 0.24) 0px 3px 8px;
     outline: 1px solid #d3b7ae;
+    color: #faa811;
   }
 `;
 export const ImgFlag = styled.img`
