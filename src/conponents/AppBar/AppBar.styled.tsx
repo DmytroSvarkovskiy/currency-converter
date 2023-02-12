@@ -24,7 +24,7 @@ export const Nav = styled.nav`
 
   font-size: 20px;
   font-weight: 500;
-  border-bottom: 2px solid #d3db5b;
+  border-bottom: 2px solid #ac8c42;
 `;
 export const Link = styled(NavLink)`
   @media (min-width: 320px) {
