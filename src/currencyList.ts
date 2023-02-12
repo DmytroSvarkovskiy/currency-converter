@@ -36,6 +36,10 @@ export const currencyListWithFlag: { [x: string]: string; title: string }[] = [
     title: 'Georgian lari',
   },
   {
+    ILS: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/234px-Flag_of_Israel.svg.png',
+    title: 'Israeli new shekel',
+  },
+  {
     KZT: 'https://flagsystem.ua/tmp/trumb/1903db49720e8e4e4dad667f0f264021.png',
     title: 'Kazakhstani tenge',
   },

@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-  /* @media screen and(min-width:480px) {
+
+  @media (min-width: 320px) {
     max-width: 320px;
   }
-  @media screen and(min-width:768px) {
+  @media (min-width: 375px) {
+    max-width: 375px;
+  }
+  @media (min-width: 768px) {
     max-width: 768px;
   }
-  @media screen and(min-width:1200px) {
-    max-width: 1200px;
-  } */
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
 `;

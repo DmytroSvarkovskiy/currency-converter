@@ -8,5 +8,6 @@ export const GlobalStyle = createGlobalStyle`
    color: '#010101'; 
   }
 a{text-decoration:none;
-color:inherit}
+color:inherit};
+
 `;
