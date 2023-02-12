@@ -32,7 +32,6 @@ export const Home: React.FC = () => {
                   );
                 })}
               </Select>
-              <img src="" alt="" />
             </BaseCurrencyWrap>
           )}
           <CurrencyList>
