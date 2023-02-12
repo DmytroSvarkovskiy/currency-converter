@@ -5,13 +5,13 @@ import { AxiosError } from 'axios';
 import { currencyListWithFlag } from '../currencyList';
 const currencyList: string[] = currencyListWithFlag.map(element => Object.keys(element)[0]);
 
-axios.defaults.baseURL = 'https://api.exchangerate.host/&latest';
+axios.defaults.baseURL = 'https://api.exchangerate.host';
 
 export const fetchCourse = createAsyncThunk<Rates, string, { rejectValue: string }>(
   'exchangeRate/fetchCourse',
   async (currency, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get<Response>('/', {
+      const { data } = await axios.get<Response>('latest', {
         params: { base: `${currency}`, symbols: currencyList.join(',') },
       });
       return data.rates;
