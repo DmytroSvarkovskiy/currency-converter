@@ -1,6 +1,6 @@
 import { currencyListWithFlag } from '../../currencyList';
 import { CurrencyLi, ImgFlag, DivTitle } from './CurrencyItem.styled';
-import { changeCurrentRate } from '../../store';
+import { changeCurrentRate } from '../../redux';
 import { useAppDispatch } from '../../hooks';
 
 type PropsItem = {

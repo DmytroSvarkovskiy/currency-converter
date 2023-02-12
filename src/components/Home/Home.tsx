@@ -1,6 +1,6 @@
 import { Container, CurrencyItem } from '../index';
 import { Casket, Title, CurrencyList, BaseCurrencyWrap, Select } from './Home.styled';
-import { changeCurrentRate } from '../../store';
+import { changeCurrentRate } from '../../redux';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 
 export const Home: React.FC = () => {

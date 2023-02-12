@@ -1,4 +1,4 @@
-import { Container } from '../index';
+import { Container } from '../';
 import { Nav, Link, CurrencyIcon, ConvertIcon } from './AppBar.styled';
 import { useAppSelector } from '../../hooks';
 export const AppBar: React.FC = () => {

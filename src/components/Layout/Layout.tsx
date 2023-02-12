@@ -1,4 +1,4 @@
-import { AppBar } from '../index';
+import { AppBar } from '../';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
 import { fetchCourse } from './api';
-import { useAppDispatch, useAppSelector } from './hooks/';
+import { useAppDispatch, useAppSelector } from './hooks';
 import { Home, Layout } from './components';
 import { GlobalStyle } from './GlobalStyle';
 
