@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
-import { fetchCours } from '../Redux/operations';
+import { fetchCours } from '../Redux/fetchCours';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { Layout } from './Layout/Layout';
 import { Home } from './pages/Home/Home';

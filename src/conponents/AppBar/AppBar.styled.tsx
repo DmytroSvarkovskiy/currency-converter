@@ -11,12 +11,15 @@ export const Nav = styled.nav`
     padding: 10px;
   }
   @media (min-width: 375px) {
+    justify-content: space-between;
     flex-direction: row;
     display: flex;
     height: 80px;
-    justify-content: start;
     align-items: center;
     gap: 40px;
+  }
+  @media (min-width: 768px) {
+    justify-content: start;
   }
 
   font-size: 20px;
