@@ -1,6 +1,6 @@
-import { Container } from '../../Container/Container';
+import { Container } from '../Container/Container';
 import { Casket } from '../Home/Home.styled';
-import { useAppSelector } from '../../../hooks';
+import { useAppSelector } from '../../hooks/hooks';
 import {
   ConvertTitle,
   FlagConvert,
@@ -15,7 +15,7 @@ import {
   CurrencyName,
 } from './Converter.styled';
 import React, { useState } from 'react';
-import { currencyListWithFlag } from '../../../currencyList';
+import { currencyListWithFlag } from '../../currencyList';
 
 const Converter: React.FC = () => {
   const { rate, currentRate } = useAppSelector(state => state.exchangeRate);
@@ -33,6 +33,7 @@ const Converter: React.FC = () => {
       parseFloat(((rate[toCurency] / rate[e.target.value]) * +fromCount).toFixed(4)).toString()
     );
   };
+
   const handleToChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setToCurrency(e.target.value);
     setToCount(
@@ -46,12 +47,14 @@ const Converter: React.FC = () => {
       parseFloat(((rate[toCurency] / rate[fromCurency]) * +e.target.value).toFixed(4)).toString()
     );
   };
+
   const onToChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setToCount(e.target.value);
     setFromCount(
       parseFloat(((rate[fromCurency] / rate[toCurency]) * +e.target.value).toFixed(4)).toString()
     );
   };
+
   const changePlaces = (): void => {
     setFromCurrency(toCurency);
     setToCurrency(fromCurency);

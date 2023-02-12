@@ -1,19 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
-import { fetchCours } from '../Redux/fetchCours';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { Layout } from './Layout/Layout';
-import { Home } from './pages/Home/Home';
-import { GlobalStyle } from '../GlobalStyle';
+import { fetchCourse } from './api/fetchCourse';
+import { useAppDispatch, useAppSelector } from './hooks/hooks';
+import { Layout } from './conponents/Layout/Layout';
+import { Home } from './conponents/Home/Home';
+import { GlobalStyle } from './GlobalStyle';
 
-const Converter = lazy(() => import('./pages/Converter/Converter'));
+const Converter = lazy(() => import('./conponents/Converter/Converter'));
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const { currentRate } = useAppSelector(state => state.exchangeRate);
 
   useEffect(() => {
-    dispatch(fetchCours(currentRate));
+    dispatch(fetchCourse(currentRate));
   }, [currentRate, dispatch]);
 
   return (

@@ -1,6 +1,6 @@
 import { Container } from '../Container/Container';
 import { Nav, Link, CurrencyIcon, ConvertIcon } from './AppBar.styled';
-import { useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../hooks/hooks';
 export const AppBar: React.FC = () => {
   const { error } = useAppSelector(state => state.exchangeRate);
 

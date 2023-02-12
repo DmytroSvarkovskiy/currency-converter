@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Rates } from '../types/types';
-import { fetchCours } from './fetchCours';
+import { fetchCourse } from '../api/fetchCourse';
 
 type rateState = {
   rate: Rates;
@@ -24,14 +24,14 @@ const exchangeSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchCours.pending, (state, _) => {
+      .addCase(fetchCourse.pending, (state, _) => {
         state.loading = true;
       })
-      .addCase(fetchCours.fulfilled, (state, action) => {
+      .addCase(fetchCourse.fulfilled, (state, action) => {
         state.loading = false;
         state.rate = action.payload;
       })
-      .addCase(fetchCours.rejected, state => {
+      .addCase(fetchCourse.rejected, state => {
         state.loading = false;
         state.error = true;
       });

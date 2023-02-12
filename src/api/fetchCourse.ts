@@ -7,7 +7,7 @@ const currensyList: string[] = currencyListWithFlag.map(element => Object.keys(e
 
 axios.defaults.baseURL = 'https://api.exchangerate.host';
 
-export const fetchCours = createAsyncThunk<Rates, string, { rejectValue: string }>(
+export const fetchCourse = createAsyncThunk<Rates, string, { rejectValue: string }>(
   'exchangeRate/fetchCours',
   async (curency, { rejectWithValue }) => {
     try {

@@ -1,8 +1,8 @@
-import { Container } from '../../Container/Container';
-import { CurrencyItem } from '../../CurrencyItem/CurrencyItem';
-import { Casket, Title, CurrencyList, BaseCurrencyWrap, Select } from '../Home/Home.styled';
-import { changeCurrentRate } from '../../../Redux/converter-slise';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { Container } from '../Container/Container';
+import { CurrencyItem } from '../CurrencyItem/CurrencyItem';
+import { Casket, Title, CurrencyList, BaseCurrencyWrap, Select } from './Home.styled';
+import { changeCurrentRate } from '../../store/converter-slise';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 
 export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
