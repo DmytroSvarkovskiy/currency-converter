@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ResError, Rates, Response } from '../types/types';
+import { ResError, Rates, Response } from '../types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
 import { currencyListWithFlag } from '../currencyList';

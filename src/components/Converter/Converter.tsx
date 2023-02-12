@@ -1,6 +1,5 @@
-import { Container } from '../Container/Container';
-import { Casket } from '../Home/Home.styled';
-import { useAppSelector } from '../../hooks/hooks';
+import { Container, Casket } from '../index';
+import { useAppSelector } from '../../hooks';
 import {
   ConvertTitle,
   FlagConvert,

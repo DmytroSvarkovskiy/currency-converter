@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Rates } from '../types/types';
-import { fetchCourse } from '../api/fetchCourse';
+import { Rates } from '../types';
+import { fetchCourse } from '../api';
 
 type rateState = {
   rate: Rates;

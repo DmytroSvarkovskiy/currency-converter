@@ -1,8 +1,7 @@
-import { Container } from '../Container/Container';
-import { CurrencyItem } from '../CurrencyItem/CurrencyItem';
+import { Container, CurrencyItem } from '../index';
 import { Casket, Title, CurrencyList, BaseCurrencyWrap, Select } from './Home.styled';
-import { changeCurrentRate } from '../../store/converter-slise';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { changeCurrentRate } from '../../store';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 
 export const Home: React.FC = () => {
   const dispatch = useAppDispatch();

@@ -1,12 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
-import { fetchCourse } from './api/fetchCourse';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
-import { Layout } from './conponents/Layout/Layout';
-import { Home } from './conponents/Home/Home';
+import { fetchCourse } from './api';
+import { useAppDispatch, useAppSelector } from './hooks/';
+import { Home, Layout } from './components';
 import { GlobalStyle } from './GlobalStyle';
 
-const Converter = lazy(() => import('./conponents/Converter/Converter'));
+const Converter = lazy(() => import('./components'));
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();

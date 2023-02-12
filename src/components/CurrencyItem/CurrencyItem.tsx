@@ -1,7 +1,7 @@
 import { currencyListWithFlag } from '../../currencyList';
 import { CurrencyLi, ImgFlag, DivTitle } from './CurrencyItem.styled';
-import { changeCurrentRate } from '../../store/converter-slise';
-import { useAppDispatch } from '../../hooks/hooks';
+import { changeCurrentRate } from '../../store';
+import { useAppDispatch } from '../../hooks';
 
 type PropsItem = {
   i: number;
