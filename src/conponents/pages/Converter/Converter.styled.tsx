@@ -117,6 +117,7 @@ export const ArrowConvert = styled(RiArrowRightLine)`
   width: 30px;
   rotate: 90deg;
   @media (min-width: 768px) {
+    rotate: 0deg;
     height: 40px;
     width: 40px;
     margin-right: 10px;
