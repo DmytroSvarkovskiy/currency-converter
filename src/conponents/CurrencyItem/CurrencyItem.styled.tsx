@@ -7,7 +7,7 @@ export const CurrencyLi = styled.li`
   flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
-  transition: scale 0.4s;
+  transition: scale 0.4s, color 0.4s;
   &:hover {
     scale: 1.02;
     border-radius: 7px;
