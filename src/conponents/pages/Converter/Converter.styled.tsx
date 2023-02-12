@@ -116,14 +116,13 @@ export const ArrowConvert = styled(RiArrowRightLine)`
   height: 30px;
   width: 30px;
   rotate: 90deg;
+  color: #756059;
   @media (min-width: 768px) {
     rotate: 0deg;
     height: 40px;
     width: 40px;
     margin-right: 10px;
   }
-
-  color: #756059;
 `;
 export const ButtonConvert = styled.button`
   background-color: transparent;
