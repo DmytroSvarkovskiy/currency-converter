@@ -5,15 +5,15 @@ import { AxiosError } from 'axios';
 import { currencyListWithFlag } from '../currencyList';
 const currensyList: string[] = currencyListWithFlag.map(element => Object.keys(element)[0]);
 
-axios.defaults.baseURL = 'https://api.exchangerate.host';
+axios.defaults.baseURL = 'https://api.exchangerate.host/&latest';
 
 export const fetchCourse = createAsyncThunk<Rates, string, { rejectValue: string }>(
   'exchangeRate/fetchCours',
-  async (curency, { rejectWithValue }) => {
+  async (currency, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get<Response>(
-        `&latest?base=${curency}&symbols=${currensyList.join(',')}`
-      );
+      const { data } = await axios.get<Response>('/', {
+        params: { base: `${currency}`, symbols: currensyList.join(',') },
+      });
       return data.rates;
     } catch (err) {
       const error = err as AxiosError<ResError>;
