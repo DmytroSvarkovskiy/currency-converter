@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { ResError, Rates, Response } from '../types';
+import { Rates, Response } from '../types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
 import { currencyListWithFlag } from '../config';
 const currencyList: string[] = currencyListWithFlag.map(element => Object.keys(element)[0]);
 
-axios.defaults.baseURL = 'https://api.exchangerate.host';
+axios.defaults.baseURL = 'https://pi.exchangerate.host';
 
 export const fetchCourse = createAsyncThunk<Rates, string, { rejectValue: string }>(
   'exchangeRate/fetchCourse',
@@ -16,7 +16,7 @@ export const fetchCourse = createAsyncThunk<Rates, string, { rejectValue: string
       });
       return data.rates;
     } catch (err) {
-      const error = err as AxiosError<ResError>;
+      const error = err as AxiosError;
       if (!error.response) {
         throw err;
       }
