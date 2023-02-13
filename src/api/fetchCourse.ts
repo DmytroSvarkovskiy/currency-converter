@@ -1,7 +1,6 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Rates, Response } from '../types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosError } from 'axios';
 import { currencyListWithFlag } from '../config';
 const currencyList: string[] = currencyListWithFlag.map(element => Object.keys(element)[0]);
 
