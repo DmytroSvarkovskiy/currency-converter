@@ -5,7 +5,7 @@ import { AxiosError } from 'axios';
 import { currencyListWithFlag } from '../config';
 const currencyList: string[] = currencyListWithFlag.map(element => Object.keys(element)[0]);
 
-axios.defaults.baseURL = 'https://pi.exchangerate.host';
+axios.defaults.baseURL = 'https://api.exchangerate.host';
 
 export const fetchCourse = createAsyncThunk<Rates, string, { rejectValue: string }>(
   'exchangeRate/fetchCourse',
