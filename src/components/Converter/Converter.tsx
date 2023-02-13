@@ -14,7 +14,7 @@ import {
   CurrencyName,
 } from './Converter.styled';
 import React, { useState } from 'react';
-import { currencyListWithFlag } from '../../currencyList';
+import { currencyListWithFlag } from '../../config/currencyList';
 
 const Converter: React.FC = () => {
   const { rate, currentRate } = useAppSelector(state => state.exchangeRate);

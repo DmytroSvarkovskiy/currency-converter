@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ResError, Rates, Response } from '../types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
-import { currencyListWithFlag } from '../currencyList';
+import { currencyListWithFlag } from '../config';
 const currencyList: string[] = currencyListWithFlag.map(element => Object.keys(element)[0]);
 
 axios.defaults.baseURL = 'https://api.exchangerate.host';
