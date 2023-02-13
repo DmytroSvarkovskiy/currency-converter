@@ -1,4 +1,4 @@
-import { Container, Casket } from '../index';
+import { Container, Casket } from '../';
 import { useAppSelector } from '../../hooks';
 import {
   ConvertTitle,

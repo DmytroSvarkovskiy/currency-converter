@@ -1,4 +1,4 @@
-import { currencyListWithFlag } from '../../config/currencyList';
+import { currencyListWithFlag } from '../../config';
 import { CurrencyLi, ImgFlag, DivTitle } from './CurrencyItem.styled';
 import { changeCurrentRate } from '../../redux';
 import { useAppDispatch } from '../../hooks';

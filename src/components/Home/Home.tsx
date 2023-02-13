@@ -1,4 +1,4 @@
-import { Container, CurrencyItem } from '../index';
+import { Container, CurrencyItem } from '../';
 import { Casket, Title, CurrencyList, BaseCurrencyWrap, Select } from './Home.styled';
 import { changeCurrentRate } from '../../redux';
 import { useAppDispatch, useAppSelector } from '../../hooks';
